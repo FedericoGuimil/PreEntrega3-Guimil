@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MixLaser - Productos</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="./img/logo3.png" type="image/x-icon">
+    
+  </head>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a href="../index.html"><img src="../img/logo3.png" alt="logo" width="200" height="100"></a>
+    </div>
+</nav>
+<main class="main">
+    <section class="container">
+        <h2 class="titulo">Cds</h2>
+        <div class="productos" id="productos">
+            <!-- Esto se va a rellenar con JS -->
+        </div>
+    </section>
+    <section class="container-carrito">
+        <h2>Carrito</h2>
+        <div class="carrito">
+            <div id="carrito-vacio">
+                <h4>Su carrito está vacío.</h4>
+            </div>
+            <div class="carrito-productos d-none" id="carrito-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+            <div class="carrito-total">
+                <h2>Total: <span id="carrito-total">$0</span></h2>
+            </div>
+            
+        </div>
+        <button class="botonvaciar" onclick="vaciarCarrito()">Vaciar Carrito!</button>
+    </section>
+</main>
+    <footer>
+      <p>Derechos de autor &copy; 2024</p>
+    </footer>
+
+
+    <script src="./js/main.js"></script>
+</html>

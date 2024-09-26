@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.navbar {
+    background-image: url(../img/madera.jpg);
+    background-size: cover;
+}
+
+.main {
+    
+    text-align: center;
+    padding: 2rem;
+    background-image: url(../img/grupo-musica.jpg);
+    background-size: cover;
+}
+
+.titulo {
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    background-color: rgb(104, 104, 104);
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 20px;
+}
+
+.producto {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 2px solid black;
+}
+
+.producto:hover {
+    transform: scale(1.02);
+    box-shadow: rgb(255, 255, 255) 4px 4px;
+  }
+
+.producto-img {
+    border-radius: 5px;
+}
+
+.producto-btn {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.container-carrito{
+    display: inline-block;
+    background-color: rgb(104, 104, 104);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.carrito{
+    border: 2px solid white;
+    padding: 5px;
+    margin: 10px;
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.carrito-producto {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.carrito-producto-btn {
+    background-color: white;
+    border: 0;
+    padding: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+
+.botonvaciar{
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+
+.botonvaciar:hover{
+    background-color: red;
+}
+
+
+footer {
+    background-image: url(../img/madera.jpg);
+    background-size: cover;
+    color: white;
+    padding-block: 10px;
+    display: flex;
+    justify-content: center;
+}
+
