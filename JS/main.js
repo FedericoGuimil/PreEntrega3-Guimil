@@ -1,57 +1,37 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const productos = [
-    {
-        id: "cd-1",
-        titulo: "Cd - Gustavo Cerati",
-        precio: 8000,
-        img: "./img/productos/cd1.jpg",
-    },
-    {
-        id: "cd-2",
-        titulo: "Cd - Spinetta",
-        precio: 10000,
-        img: "./img/productos/cd2.jpg",
-    },
-    {
-        id: "cd-3",
-        titulo: "Cd - Soda Stereo",
-        precio: 5000,
-        img: "./img/productos/cd3.jpg",
-    },
-    {
-        id: "cd-4",
-        titulo: "Cd - The Cure",
-        precio: 5000,
-        img: "./img/productos/cd4.jpg",
-    }
-];
-
 const contenedorProductos = document.querySelector("#productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 
-productos.forEach((producto) => {
-    let div = document.createElement("div");
-    div.classList.add("producto");
-    div.innerHTML = `
-        <img class="producto-img" src=${producto.img}>
-        <h3>${producto.titulo}</h3>
-        <p>$${producto.precio}</p>
-    `;
+fetch("./JS/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((producto) => {
+            let div = document.createElement("div");
+            div.classList.add("producto");
+            div.innerHTML = `
+                <img class="producto-img" src=${producto.img}>
+                <h3>${producto.titulo}</h3>
+                <p>$${producto.precio}</p>
+            `;
+        
+            let button = document.createElement("button");
+            button.classList.add("producto-btn");
+            button.innerText = "Agregar al carrito";
+            button.addEventListener("click", () => {
+                agregarAlCarrito(producto);
+            })
+        
+            div.append(button);
+        
+            contenedorProductos.append(div);
+        });
 
-    let button = document.createElement("button");
-    button.classList.add("producto-btn");
-    button.innerText = "Agregar al carrito";
-    button.addEventListener("click", () => {
-        agregarAlCarrito(producto);
     })
 
-    div.append(button);
-
-    contenedorProductos.append(div);
-});
+actualizarCarrito();
 
 function actualizarCarrito() {
     if (carrito.length === 0) {
@@ -107,9 +87,16 @@ function agregarAlCarrito(producto) {
     let itemEncontrado = carrito.find((item) => item.id === producto.id);
 
     if (itemEncontrado) {
-        itemEncontrado.cantidad++;
+        itemEncontrado.cantidad++;  
     } else {
         carrito.push({...producto, cantidad: 1});
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Se ha agregado el producto a su carrito",
+            showConfirmButton: false,
+            timer: 1600
+          });
     }
 
     actualizarCarrito();
@@ -147,6 +134,13 @@ function reducirCantidad(producto) {
 }
 
 function vaciarCarrito() {
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Ha vaciado su carrito",
+        showConfirmButton: false,
+        timer: 1600
+      });
     carrito = [];
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarCarrito();

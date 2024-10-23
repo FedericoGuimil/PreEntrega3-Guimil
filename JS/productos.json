@@ -1,0 +1,10 @@
+[
+    { "id": "cd-1", "titulo": "Cd - Gustavo Cerati", "precio": 8000, "img": "./img/productos/cd1.jpg"},
+    { "id": "cd-2", "titulo": "Cd - Spinetta", "precio": 10000, "img": "./img/productos/cd2.jpg"},
+    { "id": "cd-3", "titulo": "Cd - Soda Stereo", "precio": 5000, "img": "./img/productos/cd3.jpg" },
+    { "id": "cd-4", "titulo": "Cd - The Cure", "precio": 5000, "img": "./img/productos/cd4.jpg" },
+    { "id": "taza-1", "titulo": "Taza - The Beatles", "precio": 4000, "img": "./img/productos/taza1.jpg" },
+    { "id": "taza-2", "titulo": "Taza - Charly", "precio": 4000, "img": "./img/productos/taza2.jpg" },
+    { "id": "taza-3", "titulo": "Taza - Airbag", "precio": 4000, "img": "./img/productos/taza3.jpg" },
+    { "id": "taza-4", "titulo": "Taza - Megadeth", "precio": 4000, "img": "./img/productos/taza4.jpg" }
+]

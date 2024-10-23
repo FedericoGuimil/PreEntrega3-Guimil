@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 img {
     max-width: 100%;
     display: block;
@@ -66,6 +64,11 @@ img {
     color: white;
     padding: 10px;
     cursor: pointer;
+}
+
+.container-nav{
+    display: flex;
+    justify-content: space-between;
 }
 
 .container-carrito{
